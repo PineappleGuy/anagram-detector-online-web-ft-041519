@@ -1,20 +1,22 @@
 # Your code goes here!
+require 'pry'
 class Anagram
-  attr_accessor :match
-  @@all = []
+  attr_accessor :word
 
-  def initialize(string)
-    @string = string
+  def initialize(word)
+    @word = word.split("").sort
   end
 
   def match(array)
-    array.each do |word|
-      word.split("")
+    new_array = []
+    array.each do |w|
+      if w.split("").sort == @word
+        new_array << w
+      end
     end
-puts array
-    end
-
-
+    new_array
+    #binding.pry
+  end
 
 
 end
